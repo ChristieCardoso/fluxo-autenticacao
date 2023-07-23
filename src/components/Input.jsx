@@ -5,7 +5,7 @@ import React from "react";
 export default function Input({ name, label, type, required, ...props }) {
   return (
     <div className="flex flex-col">
-      <div className="capitalize">
+      <div className="capitalize">      {/* Iniciar com Letra Maiscula */}
         {label || name} <span className="text-red-500">{required && "*"}</span>
 
       </div>
