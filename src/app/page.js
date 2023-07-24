@@ -1,5 +1,9 @@
+
+
 export default function Home() {
   return (
-    <div>Hello</div>
-  )
+
+    <main className="min-h-screen flex justify-center pt-6">Home</main>
+
+  );
 }
