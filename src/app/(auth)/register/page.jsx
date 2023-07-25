@@ -1,5 +1,4 @@
 "use client";
-
 import Button from '@/components/Button';
 import Input from '@/components/Input';
 import Link from 'next/link';
@@ -12,7 +11,7 @@ export default function Register() {
   const [error, setError] = useState("");
   const [isFormSubmitting, setFormSubmitting] = useState(false);
   const router = useRouter();
-
+  
   const initialValues = {
     name: "",
     email: "",
@@ -48,7 +47,7 @@ export default function Register() {
           renderError(result.message);
           resetForm();
         }
-        
+
         setFormSubmitting(false);
       });
     } catch (error) {
@@ -71,15 +70,14 @@ export default function Register() {
           <Input name="name" required />
           <Input name="email" type="email" required />
           <Input name="password" type="password" required autoComplete="off" />
-          <Button
-              type="submit"
-              text={isFormSubmitting ? "Carregando..." : "Inscrever-se"}
-              disabled={isFormSubmitting}
-              className="bg-green-500 text-white rounded p-2 cursor-pointer"
-            />
-            {!values.name && !values.email && !values.password && error && (
-              <span className="text-red-500 text-sm text-center">{error}</span>
-            )}
+          <Button type="submit"
+            text={isFormSubmitting ? "Carregando..." : "Inscrever-se"}
+            disabled={isFormSubmitting}
+            className="bg-green-500 text-white rounded p-2 cursor-pointer"
+          />
+          {!values.name && !values.email && !values.password && error && (
+            <span className="text-red-500 text-sm text-center">{error}</span>
+          )}
           <span className="text-xs text-zinc-500">
             Não possui uma conta?
             <strong className="text-zinc-700">
